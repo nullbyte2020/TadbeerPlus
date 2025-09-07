@@ -1,0 +1,115 @@
+/*
+==============================================
+🎨 Tadbeer Plus - English Styles
+==============================================
+English styles for Tadbeer Plus System
+==============================================
+*/
+
+/* LTR Base */
+html[lang="en"], 
+body[dir="ltr"],
+.ltr {
+    direction: ltr;
+    text-align: left;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+/* Typography */
+.english {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+/* Navigation LTR */
+.navbar-nav {
+    flex-direction: row;
+}
+
+.dropdown-menu {
+    left: 0;
+    right: auto;
+}
+
+/* Form Controls LTR */
+.form-control,
+.form-select,
+input,
+textarea,
+select {
+    text-align: left;
+    direction: ltr;
+}
+
+/* Table LTR */
+.table th,
+.table td {
+    text-align: left;
+}
+
+/* Buttons LTR */
+.btn-group {
+    flex-direction: row;
+}
+
+/* Icons LTR */
+.icon-left {
+    margin-right: 8px;
+    margin-left: 0;
+}
+
+.icon-right {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+/* Sidebar LTR */
+.sidebar {
+    left: 0;
+    right: auto;
+}
+
+.main-content {
+    margin-left: 250px;
+    margin-right: 0;
+}
+
+/* Breadcrumb LTR */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+}
+
+/* Pagination LTR */
+.pagination {
+    flex-direction: row;
+}
+
+/* Card LTR */
+.card-header,
+.card-body,
+.card-footer {
+    text-align: left;
+}
+
+/* Modal LTR */
+.modal-header {
+    flex-direction: row;
+}
+
+.modal-header .btn-close {
+    margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+/* Print Styles for English */
+@media print {
+    html[lang="en"],
+    body[dir="ltr"],
+    .ltr {
+        direction: ltr;
+        text-align: left;
+    }
+    
+    .english {
+        font-family: 'Times New Roman', serif;
+    }
+}

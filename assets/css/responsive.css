@@ -1,0 +1,458 @@
+/*
+==============================================
+📱 Tadbeer Plus - Responsive Styles
+==============================================
+الأنماط المتجاوبة لنظام تدبير بلس
+Responsive styles for Tadbeer Plus System
+==============================================
+*/
+
+/* ==============================================
+   📱 Mobile First Approach
+============================================== */
+
+/* Extra Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .table {
+        font-size: 12px;
+    }
+    
+    .table th,
+    .table td {
+        padding: 6px 4px;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .form-control {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .modal-dialog {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    /* Hide sidebar on mobile */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /* Stack navigation items */
+    .navbar-nav {
+        flex-direction: column;
+    }
+    
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+    
+    /* Mobile table scroll */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Mobile-friendly forms */
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    /* Hide non-essential columns on mobile */
+    .table .hide-mobile {
+        display: none;
+    }
+    
+    /* Mobile breadcrumb */
+    .breadcrumb {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+    
+    /* Mobile pagination */
+    .pagination {
+        justify-content: center;
+    }
+    
+    .pagination .page-item .page-link {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        max-width: 540px;
+        padding: 15px;
+    }
+    
+    .card-body {
+        padding: 18px;
+    }
+    
+    .table {
+        font-size: 13px;
+    }
+    
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+    }
+    
+    [dir="rtl"] .main-content {
+        margin-right: 200px;
+        margin-left: 0;
+    }
+    
+    /* Show some mobile-hidden elements */
+    .table .hide-mobile.show-sm {
+        display: table-cell;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        max-width: 720px;
+        padding: 20px;
+    }
+    
+    .sidebar {
+        width: 220px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+    }
+    
+    [dir="rtl"] .main-content {
+        margin-right: 220px;
+        margin-left: 0;
+    }
+    
+    .card-columns {
+        column-count: 2;
+    }
+    
+    .table {
+        font-size: 14px;
+    }
+    
+    /* Two-column forms */
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .form-row .form-group {
+        flex: 0 0 50%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .form-row .form-group:first-child {
+        padding-left: 0;
+    }
+    
+    .form-row .form-group:last-child {
+        padding-right: 0;
+    }
+    
+    /* Show more table columns */
+    .table .hide-mobile {
+        display: table-cell;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        max-width: 960px;
+        padding: 25px;
+    }
+    
+    .sidebar {
+        width: 250px;
+    }
+    
+    .main-content {
+        margin-left: 250px;
+    }
+    
+    [dir="rtl"] .main-content {
+        margin-right: 250px;
+        margin-left: 0;
+    }
+    
+    .card-columns {
+        column-count: 3;
+    }
+    
+    /* Three-column forms for larger screens */
+    .form-row.three-columns .form-group {
+        flex: 0 0 33.333333%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        padding: 30px;
+    }
+    
+    .sidebar {
+        width: 280px;
+    }
+    
+    .main-content {
+        margin-left: 280px;
+    }
+    
+    [dir="rtl"] .main-content {
+        margin-right: 280px;
+        margin-left: 0;
+    }
+    
+    .card-columns {
+        column-count: 4;
+    }
+    
+    /* Four-column forms for very large screens */
+    .form-row.four-columns .form-group {
+        flex: 0 0 25%;
+    }
+}
+
+/* ==============================================
+   📱 Touch and Mobile Interactions
+============================================== */
+
+/* Larger touch targets for mobile */
+@media (max-width: 767.98px) {
+    .btn {
+        min-height: 44px;
+        padding: 12px 16px;
+    }
+    
+    .form-control {
+        min-height: 44px;
+        padding: 10px 12px;
+    }
+    
+    .table th,
+    .table td {
+        padding: 12px 8px;
+    }
+    
+    /* Mobile-friendly dropdowns */
+    .dropdown-menu {
+        width: 100%;
+        position: static !important;
+        transform: none !important;
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+        border-radius: 0;
+    }
+    
+    /* Mobile navigation */
+    .navbar-toggler {
+        border: none;
+        padding: 8px;
+    }
+    
+    .navbar-collapse {
+        border-top: 1px solid rgba(0,0,0,0.1);
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+}
+
+/* ==============================================
+   🖨️ Print Responsive Adjustments
+============================================== */
+
+@media print {
+    /* Hide responsive utilities that aren't needed in print */
+    .d-print-none {
+        display: none !important;
+    }
+    
+    .d-print-block {
+        display: block !important;
+    }
+    
+    .d-print-inline {
+        display: inline !important;
+    }
+    
+    .d-print-inline-block {
+        display: inline-block !important;
+    }
+    
+    /* Ensure full width for print */
+    .container,
+    .main-content {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Adjust table for print */
+    .table {
+        font-size: 10pt;
+        width: 100%;
+    }
+    
+    .table th,
+    .table td {
+        padding: 6px 4px;
+    }
+    
+    /* Show all columns in print */
+    .hide-mobile,
+    .hide-sm,
+    .hide-md {
+        display: table-cell !important;
+    }
+}
+
+/* ==============================================
+   🌐 Orientation Changes
+============================================== */
+
+@media (orientation: landscape) and (max-width: 767.98px) {
+    /* Landscape phone adjustments */
+    .sidebar {
+        width: 180px;
+    }
+    
+    .main-content {
+        margin-left: 180px;
+    }
+    
+    [dir="rtl"] .main-content {
+        margin-right: 180px;
+        margin-left: 0;
+    }
+}
+
+/* ==============================================
+   🎨 High DPI / Retina Displays
+============================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Adjust for high-DPI displays */
+    .logo img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    /* Sharper borders */
+    .card,
+    .table,
+    .form-control {
+        border-width: 0.5px;
+    }
+}
+
+/* ==============================================
+   ♿ Accessibility Improvements
+============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Respect user's motion preferences */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Basic dark mode support */
+    .auto-dark {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .auto-dark .card {
+        background-color: #2d2d2d;
+        border-color: #404040;
+    }
+    
+    .auto-dark .table {
+        color: #ffffff;
+    }
+    
+    .auto-dark .table th {
+        background-color: #404040;
+    }
+    
+    .auto-dark .form-control {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: #ffffff;
+    }
+}
+
+/* ==============================================
+   📐 Container Queries (Future-proofing)
+============================================== */
+
+/* When container queries are widely supported */
+@supports (container-type: inline-size) {
+    .responsive-container {
+        container-type: inline-size;
+    }
+    
+    @container (min-width: 300px) {
+        .card {
+            padding: 20px;
+        }
+    }
+    
+    @container (min-width: 500px) {
+        .card {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
