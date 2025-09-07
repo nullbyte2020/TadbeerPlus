@@ -1,0 +1,82 @@
+{
+  "name": "tadbeer-plus-frontend",
+  "version": "1.0.0",
+  "description": "Frontend assets for Tadbeer Plus Domestic Workers Management System",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "build": "npm run build-css && npm run build-js",
+    "build-css": "npm run build-css-ar && npm run build-css-en",
+    "build-css-ar": "sass assets/scss/style-ar.scss assets/css/style-ar.css --style=compressed",
+    "build-css-en": "sass assets/scss/style-en.scss assets/css/style-en.css --style=compressed",
+    "build-js": "webpack --mode=production",
+    "dev": "npm run dev-css && npm run dev-js",
+    "dev-css": "sass assets/scss/style-ar.scss assets/css/style-ar.css --watch & sass assets/scss/style-en.scss assets/css/style-en.css --watch",
+    "dev-js": "webpack --mode=development --watch",
+    "lint": "eslint assets/js/**/*.js",
+    "lint-fix": "eslint assets/js/**/*.js --fix",
+    "minify": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o assets/css/style-ar.min.css assets/css/style-ar.css && cleancss -o assets/css/style-en.min.css assets/css/style-en.css",
+    "minify-js": "uglifyjs assets/js/main.js -o assets/js/main.min.js -c -m",
+    "rtl": "rtlcss assets/css/style-en.css assets/css/style-ar-generated.css",
+    "test": "jest",
+    "clean": "rimraf assets/css/*.min.css assets/js/*.min.js"
+  },
+  "keywords": [
+    "domestic-workers",
+    "uae",
+    "management-system",
+    "arabic",
+    "rtl",
+    "bootstrap",
+    "jquery"
+  ],
+  "author": "Tadbeer Plus Development Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "babel-loader": "^9.1.0",
+    "clean-css-cli": "^5.6.0",
+    "css-loader": "^6.8.0",
+    "eslint": "^8.42.0",
+    "jest": "^29.5.0",
+    "mini-css-extract-plugin": "^2.7.0",
+    "rimraf": "^5.0.0",
+    "rtlcss": "^4.1.0",
+    "sass": "^1.63.0",
+    "style-loader": "^3.3.0",
+    "uglify-js": "^3.17.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.0",
+    "jquery": "^3.7.0",
+    "jquery-validation": "^1.19.5",
+    "select2": "^4.1.0-rc.0",
+    "datatables.net": "^1.13.0",
+    "datatables.net-bs5": "^1.13.0",
+    "moment": "^2.29.0",
+    "chart.js": "^4.3.0",
+    "sweetalert2": "^11.7.0",
+    "toastr": "^2.1.4",
+    "flatpickr": "^4.6.0",
+    "dropzone": "^6.0.0",
+    "cleave.js": "^1.6.0",
+    "aos": "^2.3.4",
+    "typed.js": "^2.0.16"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tadbeerplus/domestic-workers-management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tadbeerplus/domestic-workers-management/issues"
+  },
+  "homepage": "https://tadbeerplus.ae"
+}
